@@ -14,5 +14,7 @@ cfxp_fix64_t cfxp_fix64_add(cfxp_fix64_t x, cfxp_fix64_t y);
 cfxp_fix64_t cfxp_fix64_sub(cfxp_fix64_t x, cfxp_fix64_t y);
 cfxp_fix64_t cfxp_fix64_mul(cfxp_fix64_t x, cfxp_fix64_t y);
 cfxp_fix64_t cfxp_fix64_div(cfxp_fix64_t x, cfxp_fix64_t y);
+uint64_t cfxp_fix64_trunc(cfxp_fix64_t x);
+uint64_t cfxp_fix64_frac(cfxp_fix64_t x);
 
 #endif

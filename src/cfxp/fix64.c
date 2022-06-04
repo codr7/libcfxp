@@ -31,3 +31,10 @@ cfxp_fix64_t cfxp_fix64_mul(cfxp_fix64_t x, cfxp_fix64_t y) {
 cfxp_fix64_t cfxp_fix64_div(cfxp_fix64_t x, cfxp_fix64_t y) {
   return cfxp_fix64_new(cfxp_fix64_exp(x), cfxp_fix64_val(x) / (cfxp_fix64_val(y) / cfxp_scale(cfxp_fix64_exp(y))));
 }
+
+uint64_t cfxp_fix64_trunc(cfxp_fix64_t x) { return cfxp_fix64_val(x) / cfxp_scale(cfxp_fix64_exp(x)); }
+
+uint64_t cfxp_fix64_frac(cfxp_fix64_t x) {
+  uint64_t xv = cfxp_fix64_val(x), xs = cfxp_scale(cfxp_fix64_exp(x));
+  return xv - (xv / xs) * xs;
+}

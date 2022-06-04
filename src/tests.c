@@ -16,7 +16,14 @@ static void test_arith() {
   assert(cfxp_fix64_div(cfxp_fix64_new(2, 50), cfxp_fix64_new(2, 200)) == cfxp_fix64_new(2, 25));
 }
 
+static void test_trunc_frac() {
+  cfxp_fix64_t x = cfxp_fix64_new(2, 725);
+  assert(cfxp_fix64_trunc(x) == 7);
+  assert(cfxp_fix64_frac(x) == 25);
+}
+
 int main() {
   test_init();
   test_arith();
+  test_trunc_frac();
 }
