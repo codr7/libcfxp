@@ -29,6 +29,5 @@ cfxp_fix64_t cfxp_fix64_mul(cfxp_fix64_t x, cfxp_fix64_t y) {
 }
 
 cfxp_fix64_t cfxp_fix64_div(cfxp_fix64_t x, cfxp_fix64_t y) {
-  uint8_t xe = cfxp_fix64_exp(x);
-  return cfxp_fix64_new(xe, cfxp_fix64_val(x) / (cfxp_fix64_val(y) / cfxp_scale(cfxp_fix64_exp(y))));
+  return cfxp_fix64_new(cfxp_fix64_exp(x), cfxp_fix64_val(x) / (cfxp_fix64_val(y) / cfxp_scale(cfxp_fix64_exp(y))));
 }
